@@ -1,45 +1,25 @@
-import { CORE_CONCEPTS } from './data.js';
+// import { useState, Fragment } from 'react' //Fragment는 예전방식이다.
 import Header from './components/Header/Header.jsx';
-import CoreConcept from './components/CoreConcept.jsx';
-import TabButton from './components/TabButton.jsx';
-
+import CoreConcepts from './components/CoreConcepts.jsx';
+import Examples from './components/Examples.jsx';
 function App() {
-  function handleSelect(selectedButton) {
-    // selectedButton => 'components', 'jsx', 'props', 'state'
-    console.log(selectedButton);
-  }
 
+
+
+
+  console.log('APP COMPONENT EXCUTING');
   return (
-    <div>
+    //Fragment 대신  empty 사용
+    <> 
       <Header />
       <main>
-        <section id="core-concepts">
-          <h2>Core Concepts</h2>
-          <ul>
-            <CoreConcept
-              title={CORE_CONCEPTS[0].title}
-              description={CORE_CONCEPTS[0].description}
-              image={CORE_CONCEPTS[0].image}
-            />
-            <CoreConcept {...CORE_CONCEPTS[1]} />
-            <CoreConcept {...CORE_CONCEPTS[2]} />
-            <CoreConcept {...CORE_CONCEPTS[3]} />
-          </ul>
-        </section>
-        <section id="examples">
-          <h2>Examples</h2>
-          <menu>
-            <TabButton onSelect={() => handleSelect('components')}>
-              Components
-            </TabButton>
-            <TabButton onSelect={() => handleSelect('jsx')}>JSX</TabButton>
-            <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
-            <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
-          </menu>
-          Dynamic Content
-        </section>
+        <CoreConcepts />
+        <Examples />
+
       </main>
-    </div>
+    </>
+
+    
   );
 }
 

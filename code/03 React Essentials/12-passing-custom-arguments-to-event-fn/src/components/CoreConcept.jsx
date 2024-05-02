@@ -1,4 +1,5 @@
 export default function CoreConcept({ image, title, description }) {
+  console.log('CoreConcept COMPONENT EXCUTING');
   return (
     <li>
       <img src={image} alt={title} />
